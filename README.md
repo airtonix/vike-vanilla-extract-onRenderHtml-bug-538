@@ -4,11 +4,23 @@ https://github.com/vikejs/vike/issues/538#issuecomment-1920001208
 
 ## setup
 
+clone 
+
 ```
 git clone git@github.com:airtonix/vike-vanilla-extract-onRenderHtml-bug-538.git
 cd vike-vanilla-extract-onRenderHtml-bug-538
+```
+
+setup node/yarn
+
+```
+# this installs asdf, and any asdf plugins then installs the right nodejs/yarn version
 chmod +x ./setup.sh
 ./setup.sh
+```
+
+dependencies and run dev mode
+```
 yarn
 yarn dev
 ```
