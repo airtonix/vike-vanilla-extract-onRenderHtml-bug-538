@@ -8,6 +8,8 @@ import logoUrl from './logo.svg'
 import type { OnRenderHtmlAsync } from 'vike/types'
 import { getPageTitle } from './getPageTitle'
 
+import * as Style from "./global.css"
+
 const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
   const { Page } = pageContext
 
@@ -27,7 +29,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
   const desc = pageContext.data?.description || pageContext.config.description || 'Demo of using Vike'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" class="${Style.html}">
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="${logoUrl}" />

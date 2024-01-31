@@ -5,15 +5,15 @@ import logoUrl from './logo.svg'
 import { PageContextProvider } from './usePageContext'
 import { Link } from './Link'
 import type { PageContext } from 'vike/types'
-import './css/index.css'
-import './PageShell.css'
+
+import * as Styles from './PageShell.css'
 
 function PageShell({ children, pageContext }: { children: React.ReactNode; pageContext: PageContext }) {
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
         <Layout>
-          <Sidebar>
+          <Sidebar className={Styles.sidebar}>
             <Logo />
             <Link href="/">Welcome</Link>
             <Link href="/about">About</Link>
@@ -40,18 +40,11 @@ function Layout({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Sidebar({ children }: { children: React.ReactNode }) {
+function Sidebar({ children, className }: { children: React.ReactNode, className?: string }) {
   return (
     <div
       id="sidebar"
-      style={{
-        padding: 20,
-        flexShrink: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        lineHeight: '1.8em',
-        borderRight: '2px solid #eee'
-      }}
+      className={className}
     >
       {children}
     </div>
